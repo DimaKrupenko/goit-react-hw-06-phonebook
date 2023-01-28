@@ -1,11 +1,26 @@
 // import React from 'react';
 import styles from './ContactList.module.css';
 import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteContacts } from '../redux/userSlice';
 
-const ContactList = ({ contacts, handleDelete }) => {
+const ContactList = () => {
+  const contacts = useSelector(state => state.contacts);
+  const filter = useSelector(state => state.filters.filters);
+
+  const visibleContact = contacts.filter(contact =>
+    contact.name.toLowerCase().includes(filter)
+  );
+  // console.log(visibleContact);
+
+  const dispatch = useDispatch();
+  const handleDelete = () => {
+    dispatch(deleteContacts());
+  };
+
   return (
     <ul className={styles.contact}>
-      {contacts.map(contact => (
+      {visibleContact.map(contact => (
         <li className={styles.contact__list} key={contact.id}>
           {contact.name + ': ' + contact.number}
           <button
