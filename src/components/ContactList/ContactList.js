@@ -5,13 +5,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { deleteContacts } from '../redux/userSlice';
 
 const ContactList = () => {
-  const contacts = useSelector(state => state.contacts);
+  const contacts = useSelector(state => state.contacts.contacts);
   const filter = useSelector(state => state.filters.filters);
 
   const visibleContact = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter)
   );
-  // console.log(visibleContact);
+  console.log(contacts);
 
   const dispatch = useDispatch();
   const handleDelete = () => {

@@ -14,8 +14,10 @@ const Form = () => {
   const handleSubmit = evt => {
     evt.preventDefault();
     const form = evt.currentTarget;
-    const contactName = contacts.map(contact => contact.name);
-    const nameFilter = contacts.filter(cont => cont.name.includes(contactName));
+    const contactName = contacts.contacts.map(contact => contact.name);
+    const nameFilter = contacts.contacts.filter(cont =>
+      cont.name.includes(contactName)
+    );
     const nameLength = nameFilter.length;
     console.log(nameFilter);
 
