@@ -6,41 +6,6 @@ import ContactList from './ContactList/ContactList';
 
 
 const App = () => {
-
-  // const [contacts, setContacts] =  useState(() => {
-  //   return JSON.parse(localStorage.getItem('contact') ?? [])
-  // } );   
-  
-  // const [filter, setFilter] = useState('')
-  
-  
-
- 
-    // dispatch(addContacts(contacts));
-      // const nameFilter = contacts.filter(cont => cont.name.includes(contacts.name))
-      // const nameLength = nameFilter.length
-      
-       
-      // if (nameLength === 1) {
-      //   return  alert(contacts.name, 'is already in contacts')
-      // }
-      
-      // setContacts(prevState => 
-      // // const { name, number, id } = prevState;
-     
-      //   [contact, ...prevState])
-    
-    
-  
-
- 
-
-  
-  // useEffect(() => {
-  //   window.localStorage.setItem('contact', JSON.stringify(contacts))
-    
-  // }, [contacts])
-
     
     return (
       <div
